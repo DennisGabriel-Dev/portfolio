@@ -7,3 +7,11 @@ const observer = new IntersectionObserver((entries) => {
 const elements = document.querySelectorAll('.hidden')
 
 elements.forEach( element => observer.observe(element))
+options = {
+  "cursorOuter": "circle-basic",
+  "hoverEffect": "pointer-blur",
+  "hoverItemMove": false,
+  "defaultCursor": true,
+  "outerWidth": 30,
+  "outerHeight": 30
+};
