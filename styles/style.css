@@ -28,6 +28,14 @@ a { color: inherit; }
   background: #831818;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #7EA677;
+  border-radius: 5px;
+}
+
 .nav {
   color: #84C1D9;
   padding: 20px 20px 0 20px;
