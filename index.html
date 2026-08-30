@@ -1,126 +1,125 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portifolio Web II</title>
+  <title>Dennis Gabriel, Software Engineer</title>
+  <meta name="description" content="Software engineer at Novo Saque. Ruby on Rails, Hotwire, React. Building product in Brazil.">
+  <meta property="og:title" content="Dennis Gabriel, Software Engineer">
+  <meta property="og:description" content="Software engineer at Novo Saque. Ruby on Rails, Hotwire, React.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://github.com/DennisGabriel-Dev.png">
+  <link rel="icon" href="https://github.com/DennisGabriel-Dev.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:opsz,ital,wght@8..60,0,400;8..60,0,600;8..60,1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles/style.css">
+  <script>
+    (function () {
+      var query = new URLSearchParams(location.search).get("lang");
+      var stored = localStorage.getItem("lang");
+      var lang = query === "pt" || query === "en" ? query : stored;
+      if (lang === "pt") document.documentElement.lang = "pt-BR";
+    })();
+  </script>
 </head>
 <body>
-  <nav class="nav">
-    <a href="#about" class="nav__a">Sobre mim</a>
-    <a href="#projects" class="nav__a">Projetos</a>
-    <a href="#social_medias" class="nav__a">Redes Sociais</a>
-  </nav>
-  <header class="header hidden content">
-    <div class="header__div">
-      <h1 class="header__h1">Dennis Gabriel</h1>
-      <p class="header__p">(Dev Ruby on Rails)</p>
-    </div>
-    <img src="https://github.com/DennisGabriel-Dev.png" alt="imagem de Dennis Gabriel" class="header__img">
-  </header>
-
-  <main class="main">
-    <section id="about" class="hidden section1 section">
-      <h2 class="main__h2">Sobre mim</h2>
-      <p class="main__p">Atualmente estou cursando o 3° semestre de Análise e Desenvolvimento de Sistemas.</p>
-      <p class="main__p">Sou desenvolvedor de software com experiência de um ano, atuando com: Ruby on Rails, JavaScript, Hotwire, HTML, CSS, Bootstrap e Docker. </p>
-      <p class="main__p">Além disso, tenho conhecimentos em: Node, Express, React, Svelte, Python e Java.</p>
-
-      <div class="logos">
-
-        <div class="hidden">
-          <img class="language" src="./images/ruby-logo.png" alt="ruby logo">
-        </div>
-
-        <div class="hidden">
-          <img class="language" src="./images/javascript-logo.png" alt="javascript logo">
-        </div>
-
-        <div class="hidden">
-          <img class="language" src="./images/python-logo.png" alt="python logo">
-        </div>
-
-        <div class="hidden">
-          <img class="language" src="./images/java-logo.png" alt="java logo">
-        </div>
-
-      </div>
-    </section>
-
-    <section id="projects" class="hidden section2 section">
-      <h2 class="main__h2">Projetos</h2>
-      <div class="project">
-        <div>
-          <h3 class="main__h3"><a href="https://github.com/DennisGabriel-Dev/JustToDo" target="_blank">JustToDo</a></h3>
-          <p class="main__p">Um To Do List desenvolvido com Ruby on Rails, Hotwire e PostgreSQL.</p>
-          <p class="main__p">Usei Devise para autenticação, I18n para internacionalização e outras gems.</p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <h3 class="main__h3"><a href="https://github.com/DennisGabriel-Dev/articles-api" target="_blank">Articles API</a></h3>
-          <p class="main__p">Uma API desenvolvida usando Ruby on Rails para publicação de artigos, 
-              com autenticação de usuários via JWT e testes unitários com RSpec.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <h3 class="main__h3"><a href="https://github.com/DennisGabriel-Dev/Scraper" target="_blank">Scraper</a></h3>
-          <p class="main__p">WebScraper desenvolvido com ruby e o uso de algumas gems: nokogiri, httparty e parallel.
-          </p>
-          <p class="main__p">No final das análises é gerado um arquivo CSV.</p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <h3 class="main__h3"><a href="https://github.com/DennisGabriel-Dev/coffeeOrTea" target="_blank">CoffeeOrTea</a></h3>
-          <p class="main__p">API feita em Java e SpringBoot que simula um e-commerce, o banco de dados utilizado foi o MongoDB.
-          </p>
-        </div>
-      </div>
-
-      <div class="project">
-        <div>
-          <h3 class="main__h3"><a href="https://github.com/DennisGabriel-Dev/chess-system-java" target="_blank">chess-system-java</a></h3>
-          <p class="main__p">Jogo de xadrez feito com Java 17 puro, aproveitando conceitos e recursos de POO.
-          </p>
-        </div>
-      </div>
-    </section>
-
-
-    <section id="social_medias" class="hidden section section3">
-
-      <h2 class="main__h2">Minhas Redes Sociais</h2>
-
-      <div class="social_medias__div">
-        <a href="https://github.com/DennisGabriel-Dev" target="_blank">
-          <img src="./images/github-logo.png" alt="logo github" class="social_medias__img">
+  <div class="page">
+    <header class="top">
+      <nav class="lang" aria-label="Language">
+        <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <span aria-hidden="true">/</span>
+        <button type="button" data-lang-btn="pt" aria-pressed="false">PT</button>
+      </nav>
+      <nav class="links" aria-label="Social">
+        <a href="https://github.com/DennisGabriel-Dev" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/dennisgabriel-dev/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://medium.com/@dennisgabr745" target="_blank" rel="noopener">
+          <span data-lang="en">Writing</span>
+          <span data-lang="pt">Escritos</span>
         </a>
+      </nav>
+    </header>
 
-        <a href="https://www.linkedin.com/in/dennisgabriel-dev/" target="_blank">
-          <img src="./images/linkedin-logo.png" alt="logo linkedin" class="social_medias__img">
-        </a>
+    <main>
+      <section class="intro">
+        <img
+          class="portrait"
+          src="https://github.com/DennisGabriel-Dev.png"
+          alt="Dennis Gabriel"
+          width="80"
+          height="80"
+        >
+        <h1>Dennis Gabriel</h1>
+        <p class="role">
+          <span data-lang="en">software engineer · ruby on rails</span>
+          <span data-lang="pt">engenheiro de software · ruby on rails</span>
+        </p>
+      </section>
 
-        <a href="https://medium.com/@dennisgabr745" target="_blank">
-          <img src="./images/medium-logo.png" alt="logo medium" class="social_medias__img">
-        </a>
+      <section class="bio">
+        <div data-lang="en">
+          <p>Hello. I’m Dennis.</p>
+          <p>I’m a software engineer at <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/novosaque/">Novo Saque</a>, a Brazilian fintech. I build product with Ruby on Rails, Hotwire, React, and PostgreSQL. Previously I was a developer at a payment-checkout startup.</p>
+          <p>I graduated in Systems Analysis and Development from IFMA. My thesis was a multi-tenant, white-label SaaS so preparatory courses can run their own digital platform. Teachers get live student metrics; the school gets its own product.</p>
+          <p>I write about software. I also play guitar.</p>
+        </div>
+        <div data-lang="pt">
+          <p>Olá. Eu sou o Dennis.</p>
+          <p>Sou engenheiro de software na <a target="_blank" rel="noopener" href="https://www.linkedin.com/company/novosaque/">Novo Saque</a>, uma fintech brasileira. Construo produto com Ruby on Rails, Hotwire, React e PostgreSQL. Antes, fui desenvolvedor em uma startup de checkout de pagamento.</p>
+          <p>Sou formado em Análise e Desenvolvimento de Sistemas pelo IFMA. No TCC, construí um SaaS multi-tenant e white-label para cursinhos terem a própria plataforma digital. A equipe docente acompanha o desempenho dos alunos em tempo real.</p>
+          <p>Escrevo sobre software. Também toco guitarra.</p>
+        </div>
+      </section>
 
-        <a href="https://www.youtube.com/@dennisgabrieldev" target="_blank">
-          <img src="./images/youtube-logo.png" alt="logo medium" class="social_medias__img">
-        </a>
-      </div>
-    </section>
-  </main>
+      <section>
+        <h2>
+          <span data-lang="en">Selected work</span>
+          <span data-lang="pt">Projetos</span>
+        </h2>
+
+        <article class="work">
+          <h3><a href="https://github.com/DennisGabriel-Dev/pins" target="_blank" rel="noopener">Pins</a></h3>
+          <p data-lang="en">A collaborative real-time map where people drop geolocated moments. Rails 8, Hotwire, Leaflet, and Solid Cable. A monolith, no extra frontend.</p>
+          <p data-lang="pt">Um mapa colaborativo em tempo real onde as pessoas marcam momentos geolocalizados. Rails 8, Hotwire, Leaflet e Solid Cable. Um monolito, sem frontend à parte.</p>
+        </article>
+
+        <article class="work">
+          <h3><a href="https://github.com/DennisGabriel-Dev/alpha_white" target="_blank" rel="noopener">Alpha White</a></h3>
+          <p data-lang="en">A white-label SaaS for prep schools. Multi-tenant architecture, Rails, and a bit of Python automation. My undergraduate thesis.</p>
+          <p data-lang="pt">SaaS white-label para cursinhos. Arquitetura multi-tenant, Rails e um pouco de automação em Python. Foi o meu TCC.</p>
+        </article>
+
+        <article class="work">
+          <h3><a href="https://github.com/DennisGabriel-Dev/JustToDo" target="_blank" rel="noopener">JustToDo</a></h3>
+          <p data-lang="en">A to-do list with Rails, Hotwire, PostgreSQL, Devise, and i18n. Small, complete, and the kind of app I use to keep a stack sharp.</p>
+          <p data-lang="pt">Uma to-do list com Rails, Hotwire, PostgreSQL, Devise e i18n. Pequeno, completo, e o tipo de app que uso para manter a stack afiada.</p>
+        </article>
+      </section>
+
+      <section>
+        <h2>
+          <span data-lang="en">Writing</span>
+          <span data-lang="pt">Escritos</span>
+        </h2>
+        <ul class="writing">
+          <li>
+            <a href="https://medium.com/@dennisgabr745/redis-as-cache-634b8f3748b3" target="_blank" rel="noopener">Redis para Cache</a>
+            <time datetime="2025-12-08">08/12/2025</time>
+          </li>
+          <li>
+            <a href="https://medium.com/@dennisgabr745/apis-restful-b01bc985bd1f" target="_blank" rel="noopener">APIs RESTful</a>
+            <time datetime="2026-03-22">22/03/2026</time>
+          </li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p data-lang="en">Write to me at <a href="mailto:dennisgabr745@gmail.com">dennisgabr745@gmail.com</a>.</p>
+      <p data-lang="pt">Fale comigo em <a href="mailto:dennisgabr745@gmail.com">dennisgabr745@gmail.com</a>.</p>
+    </footer>
+  </div>
   <script src="./scripts/script.js"></script>
 </body>
-<script type="text/javascript" src="https://res.cloudinary.com/veseylab/raw/upload/v1684982764/magicmouse-2.0.0.cdn.min.js"></script>
-<script type="text/javascript">
-  magicMouse(options);
-</script>
 </html>

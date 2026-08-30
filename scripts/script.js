@@ -1,17 +1,23 @@
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    entry.isIntersecting ? entry.target.classList.add("show") : entry.target.classList.remove("show")
-  })
-})
+const STORAGE_KEY = "lang";
 
-const elements = document.querySelectorAll('.hidden')
+function setLang(lang) {
+  const htmlLang = lang === "pt" ? "pt-BR" : "en";
+  document.documentElement.lang = htmlLang;
 
-elements.forEach( element => observer.observe(element))
-options = {
-  "cursorOuter": "circle-basic",
-  "hoverEffect": "pointer-blur",
-  "hoverItemMove": false,
-  "defaultCursor": true,
-  "outerWidth": 30,
-  "outerHeight": 30
-};
+  document.querySelectorAll("[data-lang-btn]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.langBtn === lang));
+  });
+
+  localStorage.setItem(STORAGE_KEY, lang);
+}
+
+document.querySelectorAll("[data-lang-btn]").forEach((button) => {
+  button.addEventListener("click", () => setLang(button.dataset.langBtn));
+});
+
+const query = new URLSearchParams(location.search).get("lang");
+const saved = localStorage.getItem(STORAGE_KEY);
+const initial = query === "pt" || query === "en" ? query : saved;
+if (initial === "pt" || initial === "en") {
+  setLang(initial);
+}
