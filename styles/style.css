@@ -181,9 +181,39 @@ h2 {
   font-size: 1.05rem;
 }
 
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease;
+}
+
+.cursor.is-on {
+  opacity: 0.8;
+}
+
+.cursor.is-hover {
+  width: 28px;
+  height: 28px;
+}
+
 html[lang="en"] [data-lang="pt"],
 html[lang="pt-BR"] [data-lang="en"] {
   display: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor {
+    display: none;
+  }
 }
 
 @media (max-width: 520px) {
