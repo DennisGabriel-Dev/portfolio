@@ -5,6 +5,17 @@
   --rule: #d9cbb6;
   --accent: #c43c1a;
   --accent-hover: #9a2e14;
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --paper: #161210;
+  --ink: #f3ead8;
+  --muted: #a89886;
+  --rule: #3a322c;
+  --accent: #e05630;
+  --accent-hover: #f07550;
+  color-scheme: dark;
 }
 
 * {
@@ -14,6 +25,7 @@
 
 html {
   scroll-behavior: smooth;
+  background: var(--paper);
 }
 
 body {
@@ -51,7 +63,7 @@ a:hover {
 .top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   gap: 1rem 1.5rem;
   flex-wrap: wrap;
   margin-bottom: 3.5rem;
@@ -83,9 +95,84 @@ a:hover {
   font-weight: 600;
 }
 
+.top__end {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
 .links {
   display: flex;
   gap: 1rem;
+}
+
+.theme {
+  position: relative;
+  width: 2.35rem;
+  height: 2.35rem;
+  flex-shrink: 0;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  padding: 0;
+  background: color-mix(in srgb, var(--accent) 12%, var(--paper));
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.theme:hover {
+  background: color-mix(in srgb, var(--accent) 22%, var(--paper));
+  color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+.theme:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.2rem;
+  height: 1.2rem;
+  margin: -0.6rem 0 0 -0.6rem;
+  transition: opacity 0.35s ease, transform 0.45s ease;
+}
+
+.theme__sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0.4);
+}
+
+[data-theme="dark"] .theme__moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0.4);
+}
+
+[data-theme="dark"] .theme__sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html:not(.is-theme-vt) body {
+    transition: background-color 0.45s ease, color 0.45s ease;
+  }
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 2;
 }
 
 .intro {
@@ -339,5 +426,10 @@ html[lang="pt-BR"] [data-lang="en"] {
   .writing li {
     flex-direction: column;
     gap: 0.15rem;
+  }
+
+  .theme {
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
