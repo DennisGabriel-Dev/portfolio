@@ -15,6 +15,25 @@ document.querySelectorAll("[data-lang-btn]").forEach((button) => {
   button.addEventListener("click", () => setLang(button.dataset.langBtn));
 });
 
+function showJob(id) {
+  document.querySelectorAll("[data-job-tab]").forEach((tab) => {
+    tab.setAttribute("aria-selected", String(tab.dataset.jobTab === id));
+  });
+
+  document.querySelectorAll("[data-job-panel]").forEach((panel) => {
+    panel.hidden = panel.dataset.jobPanel !== id;
+  });
+}
+
+document.querySelectorAll("[data-job-tab]").forEach((button) => {
+  button.addEventListener("click", () => showJob(button.dataset.jobTab));
+});
+
+const jobQuery = new URLSearchParams(location.search).get("job");
+if (jobQuery === "novosaque" || jobQuery === "classepay") {
+  showJob(jobQuery);
+}
+
 const cursor = document.querySelector(".cursor");
 const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
