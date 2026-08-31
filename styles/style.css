@@ -132,6 +132,73 @@ h2 {
   border-top: 1px solid var(--rule);
 }
 
+.jobs {
+  display: grid;
+  grid-template-columns: 9.5rem 1fr;
+  gap: 1.25rem 2rem;
+  margin-top: 1.35rem;
+  align-items: start;
+}
+
+.jobs__tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.35rem;
+}
+
+.jobs__tabs button {
+  background: none;
+  border: 0;
+  padding: 0.2rem 0;
+  font: inherit;
+  color: var(--muted);
+  cursor: pointer;
+  text-align: left;
+}
+
+.jobs__tabs button:hover,
+.jobs__tabs button[aria-selected="true"] {
+  color: var(--accent);
+}
+
+.jobs__tabs button[aria-selected="true"] {
+  font-weight: 600;
+}
+
+.jobs__panel h3 {
+  font-family: Fraunces, Georgia, serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.jobs__panel .when {
+  margin-top: 0.25rem;
+  margin-bottom: 0.7rem;
+}
+
+.jobs__panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.jobs__panel li {
+  position: relative;
+  padding-left: 1.1rem;
+}
+
+.jobs__panel li + li {
+  margin-top: 0.55rem;
+}
+
+.jobs__panel li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+}
+
 .work {
   margin-top: 1.35rem;
 }
@@ -146,6 +213,17 @@ h2 {
 .work p {
   margin-top: 0.3rem;
   color: var(--ink);
+}
+
+.work .when {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-style: italic;
+  margin-bottom: 0.55rem;
+}
+
+.work p + p {
+  margin-top: 0.75rem;
 }
 
 .writing {
@@ -224,6 +302,17 @@ html[lang="pt-BR"] [data-lang="en"] {
   .page {
     width: min(42rem, calc(100% - 2rem));
     padding-top: 1.25rem;
+  }
+
+  .jobs {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .jobs__tabs {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
   }
 
   .writing li {
